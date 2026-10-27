@@ -1,0 +1,16 @@
+{
+  "name": "bydkz-linux",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Bydkz Linux 原生车控服务：对接 Bydkz 手机 APP 的比亚迪云端代理（自用）",
+  "main": "src/index.js",
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "start": "node src/index.js",
+    "check": "node tools/check.js",
+    "send": "node tools/send.js",
+    "selftest": "node tools/selftest.js"
+  }
+}

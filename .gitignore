@@ -1,0 +1,9 @@
+# 运行产物与凭据 —— 永远不要提交
+config.json
+data/
+logs/
+node_modules/
+*.log
+
+# 系统
+.DS_Store

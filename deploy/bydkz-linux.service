@@ -1,0 +1,28 @@
+[Unit]
+Description=Bydkz Linux 车控服务 (BYD car control proxy)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+WorkingDirectory=/www/wwwroot/bydkz-linux
+Environment=PATH=/usr/local/node-v22/bin:/usr/local/bin:/usr/bin:/bin
+# 服务器内存有限（1.9G 且跑着网关/博客），限制 Node 堆 128MB（本服务占用极低，够用）
+Environment=NODE_OPTIONS=--max-old-space-size=128
+ExecStart=/bin/bash /www/wwwroot/bydkz-linux/run.sh
+Restart=always
+# 重启间隔放宽：配合服务内登录冷却，避免崩溃循环反复登录踢手机端
+RestartSec=10
+
+# 日志：journalctl -u bydkz-linux -f
+StandardOutput=journal
+StandardError=journal
+
+# 基本安全加固
+NoNewPrivileges=true
+PrivateTmp=true
+ProtectSystem=full
+ReadWritePaths=/www/wwwroot/bydkz-linux
+
+[Install]
+WantedBy=multi-user.target

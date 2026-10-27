@@ -1,0 +1,14 @@
+{
+  "username": "13800000000",
+  "password": "你的比亚迪账号登录密码",
+  "controlPin": "123456",
+  "vin": "",
+  "port": 8889,
+  "requireSign": true,
+  "statusCacheMs": 15000,
+  "backgroundRefreshMs": 60000,
+  "climateTimeSpan": 1,
+  "loginIntervalHours": 0,
+  "logLevel": "info",
+  "tencentMapKey": ""
+}
